@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Household from "@/components/Insurance/Household";
+import Household from "../components/Insurance/Household";
 
 export default function Home() {
   return (
@@ -14,7 +14,9 @@ export default function Home() {
         <div className="max-w-[640px] mx-auto py-10">
           <div className="bg-white shadow-xl p-8">
             <h1 className="mb-3">Household</h1>
-            <Household />
+            <div className="overflow-x-scroll lg:overflow-auto">
+              <Household />
+            </div>
           </div>
         </div>
       </main>

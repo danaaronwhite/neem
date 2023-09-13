@@ -4,11 +4,11 @@ export enum InsuranceType {
 }
 
 export type Member = {
-  id: string;
+  id: any;
   covered: boolean;
   name: string;
   nickname: string | null;
   primarySubscriber: boolean;
-  insuranceType: InsuranceType;
+  insuranceType: InsuranceType | string;
   subscriberId: string;
 }

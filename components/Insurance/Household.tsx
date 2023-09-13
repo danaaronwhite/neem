@@ -1,6 +1,6 @@
-import { InsuranceType, Member } from "@/lib/types";
+import { InsuranceType, Member } from "../../lib/types";
 import { useState } from "react";
-import HouseholdMember from "@/components/Insurance/HouseholdMember";
+import HouseholdMember from "../Insurance/HouseholdMember";
 import { faker } from '@faker-js/faker';
 
 const initData: Member[] = [
@@ -46,7 +46,7 @@ export default function Household() {
 
   // Set initial state
   const [members, setMembers] = useState<Member[] | null>(initData)
-  const [primarySubscriber, setPrimarySubscriber] = useState<number | null>(null)
+  const [primarySubscriber, setPrimarySubscriber] = useState<string>("")
 
   // Set the insurance type
   const setInsuranceType = (memberId: number, insuranceType: InsuranceType) => {
@@ -57,7 +57,7 @@ export default function Household() {
     }
     if (temp) {
       // Update data
-      const thisMember = temp.find(o => o.id === memberId)
+      const thisMember = temp.find((o: Member) => o.id === memberId)
       if (thisMember) thisMember.insuranceType = insuranceType
     }
     setMembers(temp)
@@ -71,7 +71,7 @@ export default function Household() {
     }
     if (temp) {
       // Update data
-      const thisMember = temp.find(o => o.id === memberId)
+      const thisMember = temp.find((o: Member) => o.id === memberId)
       if (thisMember) thisMember.subscriberId = id
     }
     setMembers(temp)
@@ -91,7 +91,7 @@ export default function Household() {
     setMembers(temp)
   }
 
-  const setPrimarySubscriberHandler = (memberId: number) => {
+  const setPrimarySubscriberHandler = (memberId: string) => {
     setPrimarySubscriber(memberId)
   }
 
@@ -124,7 +124,7 @@ export default function Household() {
 
   return (
     <>
-      <div className="grid grid-cols-[65px_190px_65px_142px_80px] gap-2 mb-2">
+      <div className="grid grid-cols-[65px_175px_65px_142px_80px] gap-2 mb-2">
         <div className="col-label">
           <div className="flex items-center text-left">
             <div>Covered</div>

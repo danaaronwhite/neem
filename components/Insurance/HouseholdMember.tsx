@@ -1,12 +1,12 @@
-import { Member, InsuranceType } from "@/lib/types";
+import { Member, InsuranceType } from "../../lib/types";
 import classNames from "classNames";
 import { ChangeEvent, SetStateAction, useEffect } from "react";
 
 type Props = {
   member: Member,
-  primarySubscriber: number | null,
-  setInsuranceType: SetStateAction<InsuranceType>,
-  setID: SetStateAction<string>,
+  primarySubscriber: string,
+  setInsuranceType: any,
+  setID: SetStateAction<any>,
   setCovered: SetStateAction<any>,
   setPrimarySubscriberHandler: SetStateAction<any>,
 }
@@ -64,9 +64,10 @@ export default function HouseholdMember({ member, primarySubscriber, setInsuranc
       <div className="col-label">
         <input 
           type="text" 
-          className={classNames("border border-select-border rounded appearance-none py-3 px-4 w-[80px] focus:border-select-border", !member.id && "bg-select-border")}
+          className={classNames("border border-select-border rounded appearance-none py-3 px-4 w-[96px] focus:border-select-border", !member.id && "bg-select-border")}
           value={member.subscriberId}
           onChange={(e: ChangeEvent<HTMLInputElement>) => setID(member.id, e.target.value)}
+          placeholder="Ins. ID/SSN"
         />
       </div>
     </>
