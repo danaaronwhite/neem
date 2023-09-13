@@ -1,5 +1,5 @@
 import { Member, InsuranceType } from "../../lib/types";
-import classNames from "classNames";
+import classNames from "classnames";
 import { ChangeEvent, SetStateAction, useEffect } from "react";
 
 type Props = {
