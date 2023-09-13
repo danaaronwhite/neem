@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind forms;
+
+/* Headings */
+h1 {
+  @apply text-base font-medium font-sans;
+}
+
+/* Column Labels */
+.col-label {
+  @apply text-xs font-normal leading-4 tracking-tight;
+}
